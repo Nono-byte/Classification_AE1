@@ -51,20 +51,23 @@ def main():
     # these are static across all pages
     st.title("Tweet Classifer")
     st.image("https://i.gifer.com/RD07.gif")
-    st.subheader("Climate change tweet classification")
+    st.header("Climate change tweet classification")
 
     # Creating sidebar with selection box -
     # you can create multiple pages this way
-    options = ["Prediction", "Information"]
+    options = ["Information","Prediction"]
     selection = st.sidebar.selectbox("Choose Option", options)
 
     # Building out the "Information" page
     if selection == "Information":
         st.info("General Information")
         # You can read a markdown file from supporting resources folder
-        st.markdown("Many companies are built around lessening one’s environmental impact or carbon footprint. They offer products and services that are environmentally friendly and sustainable, in line with their values and ideals. They would like to determine how people perceive climate change and whether or not they believe it is a real threat. This would add to their market research efforts in gauging how their product/service may be received.")
+        st.markdown("Social Media data is a huge source of Big Data in the form of chats, messages, news feeds, etc. Text analytics is a process that helps analyse this unstructured data and look for useful trends."+
+        "Twitter data is a powerful source of information on a wide list of topics. This data can be analyzed to find trends related to specific topics, measure popular sentiment, obtain feedback on past decisions and also help make future decisions."+
+        "This app is a tool that is designed to analyse customer sentiment on climate change based on their tweets, and thus help in the business decision making process.")
 
-        st.image('wordcloud.png')
+
+        st.image('wordcloud2.png')
         
         st.image('numberoftweets.png')
 
@@ -74,11 +77,11 @@ def main():
 
     # Building out the predication page
     if selection == "Prediction":
-        st.info("Prediction with ML Models")
+        st.info("Climate change prediction tool ")
         # Creating a text box for user input
         tweet_text = st.text_area("Enter Text","Type Here")
 
-        if st.button("Classify 1"):
+        if st.button("Predict"):
             # Transforming user input with vectorizer
             vect_text = tweet_cv.transform([tweet_text]).toarray()
             # Load your .pkl file with the model of your choice + make predictions
