@@ -69,8 +69,7 @@ def main():
 
         st.image('wordcloud2.png')
         
-        st.image('numberoftweets.png')
-
+        st.image('sentiment.png')
         st.subheader("Raw Twitter data and label")
         if st.checkbox('Show raw data'): # data is hidden if box is unchecked
             st.write(raw[['sentiment', 'message']]) # will write the df to the page
